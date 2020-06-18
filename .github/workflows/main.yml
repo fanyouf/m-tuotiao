@@ -19,7 +19,7 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runer.os }}-node-
+          ${{ runner.os }}-node-
       
     # 安装依赖
     - run: npm ci
