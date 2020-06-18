@@ -15,7 +15,7 @@ jobs:
       uses: actions/cache@v1
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hasFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys:
           ${{ runer.os }}-node-
       
@@ -27,7 +27,7 @@ jobs:
 
     # 发布
     - names: Deploy
-      uses: peaceiris/action-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v2
       env:
         PERSONAL_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         PUBLISH_BRANCH: gh-pages
