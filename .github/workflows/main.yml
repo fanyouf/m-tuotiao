@@ -1,8 +1,10 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - master
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys:
+        restore-keys: |
           ${{ runer.os }}-node-
       
     # 安装依赖
